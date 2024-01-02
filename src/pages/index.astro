@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/Base.astro"
+import { getCollection, getEntry } from "astro:content"
+
+function formatDate(date: Date) {
+	console.log(date)
+	return date.getMonth() + "/" + date.getDate() + "/" + date.getFullYear()
+}
+
+const allExperiments = await getCollection("experiments");
+---
+
+<BaseLayout title="Abe's Experiments">
+	<h1>Experiments</h1>
+	<p>I make web experiments sometimes. Here is a list.</p>
+	<ul>
+		{allExperiments.map(experiment => (
+			<li><a href={"/experiments/" + experiment.slug} >{experiment.data.title}</a> - <em>{formatDate(experiment.data.date)}</em></li>
+		))}
+	</ul>
+</BaseLayout>

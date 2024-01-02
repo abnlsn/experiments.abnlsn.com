@@ -1,0 +1,30 @@
+---
+let { title } = Astro.props
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <link rel="stylesheet" href="https://unpkg.com/missing.css@1.1.1">
+</head>
+<body>
+    <main>
+        <nav class="crowded">
+            <h2><a href="/">Abe's Experiments</a></h2>
+        </nav>
+        <slot></slot>
+    </main>
+    <footer>
+        <p>Made using <a href="https://astro.build">Astro</a> and <a href="https://missing.style">missing.css</a>.</p>
+    </footer>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Inter:wght@500&display=swap');
+        :root {
+            --main-font: 'Crimson Text', serif;
+            --secondary-font: 'Inter', sans-serif;
+        }
+    </style>
+</body>
+</html>
