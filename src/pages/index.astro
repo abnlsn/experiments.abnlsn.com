@@ -15,7 +15,7 @@ const allExperiments = await getCollection("experiments");
 	<p>I make web experiments sometimes. Here is a list.</p>
 	<ul>
 		{allExperiments.map(experiment => (
-			<li><a href={"/experiments/" + experiment.slug} >{experiment.data.title}</a> - <em>{formatDate(experiment.data.date)}</em></li>
+			<li><a target="_blank" rel="noreferrer noopener" href={"/experiments/" + experiment.slug} >{experiment.data.title}</a> - <em>{formatDate(experiment.data.date)}</em></li>
 		))}
 	</ul>
 </BaseLayout>
