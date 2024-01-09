@@ -12,7 +12,7 @@ const allExperiments = await getCollection("experiments");
 
 <BaseLayout title="Abe's Experiments">
 	<h1>Experiments</h1>
-	<p>I make web experiments sometimes. Here is a list.</p>
+	<p>I make web experiments sometimes. The code for this entire site can be found <a href="https://github.com/abnlsn/experiments.abnlsn.com">on github</a>.</p>
 	<ul>
 		{allExperiments.map(experiment => (
 			<li><a target="_blank" rel="noreferrer noopener" href={"/experiments/" + experiment.slug} >{experiment.data.title}</a> - <em>{formatDate(experiment.data.date)}</em></li>
